@@ -19,11 +19,13 @@ services:
       dockerfile: Dockerfile
     container_name: frontend
     volumes:
-      - ./frontend:/app
+       - ./frontend:/app
+       - /app/node_modules
     ports:
       - "5173:5173"
     env_file:
       - ./frontend/.env
+    
 
   db:
     image: postgres:latest
@@ -45,6 +47,8 @@ services:
     restart: always
     ports:
       - 8080:8080
+    environment:
+      ADMINER_DEFAULT_SERVER: db
 
   nginx-proxy-manager:
     image: jc21/nginx-proxy-manager:latest
@@ -62,9 +66,11 @@ services:
       - db
       - backend
       - frontend
-      - adminer
+      - adminer   
 
 volumes:
   postgres_data:
   data:
   letsencrypt:
+
+
