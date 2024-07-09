@@ -11,3 +11,4 @@ nginx/data/nginx/
 # Ignore all files in the data directory except for specific files
 nginx/data/*
 !nginx/data/.gitignore
+node_modules/
