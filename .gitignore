@@ -1,0 +1,13 @@
+# Logs
+nginx/data/logs/
+*.log
+
+# SQLite database
+nginx/data/database.sqlite
+
+# Nginx configuration
+nginx/data/nginx/
+
+# Ignore all files in the data directory except for specific files
+nginx/data/*
+!nginx/data/.gitignore
