@@ -4,14 +4,11 @@ FROM node:latest
 # Set working directory
 WORKDIR /app
 
-# Copy requirements
-COPY package.json package-lock.json ./
+# Copy the rest of the project files
+COPY . .
 
 # Install dependencies
 RUN npm install
-
-# Copy the rest of the project files
-COPY . .
 
 # Expose port
 EXPOSE 5173
