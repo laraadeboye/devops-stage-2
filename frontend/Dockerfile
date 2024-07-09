@@ -4,7 +4,7 @@ FROM node:latest
 # Set working directory
 WORKDIR /app
 
-# Copy the rest of the project files
+# Copy the all of the project files
 COPY . .
 
 # Install dependencies
